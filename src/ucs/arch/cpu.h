@@ -39,6 +39,7 @@ typedef enum ucs_cpu_model {
     UCS_CPU_MODEL_ZHAOXIN_WUDAOKOU,
     UCS_CPU_MODEL_ZHAOXIN_LUJIAZUI,
     UCS_CPU_MODEL_RV64G,
+    UCS_CPU_MODEL_S390X,
     UCS_CPU_MODEL_NVIDIA_GRACE,
     UCS_CPU_MODEL_LAST
 } ucs_cpu_model_t;
@@ -68,6 +69,7 @@ typedef enum ucs_cpu_vendor {
     UCS_CPU_VENDOR_AMD,
     UCS_CPU_VENDOR_GENERIC_ARM,
     UCS_CPU_VENDOR_GENERIC_PPC,
+    UCS_CPU_VENDOR_GENERIC_IBM,
     UCS_CPU_VENDOR_FUJITSU_ARM,
     UCS_CPU_VENDOR_ZHAOXIN,
     UCS_CPU_VENDOR_GENERIC_RV64G,
@@ -107,6 +109,8 @@ typedef struct ucs_cpu_builtin_memcpy {
 #  include "aarch64/cpu.h"
 #elif defined(__riscv)
 #  include "rv64/cpu.h"
+#elif defined(__s390x__)
+#  include "s390x/cpu.h"
 #else
 #  error "Unsupported architecture"
 #endif

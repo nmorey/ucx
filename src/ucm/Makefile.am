@@ -34,6 +34,7 @@ noinst_HEADERS = \
 	bistro/bistro_aarch64.h \
 	bistro/bistro_ppc64.h \
 	bistro/bistro_rv64.h
+	bistro/bistro_s390x.h
 
 libucm_la_SOURCES = \
 	event/event.c \
