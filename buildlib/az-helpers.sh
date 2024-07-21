@@ -224,7 +224,7 @@ check_release_build() {
     elif [ "${build_reason}" == "IndividualCI" ] || [ "${build_reason}" == "ResourceTrigger" ]
     then
         if [[ "$BUILD_DEFINITIONNAME" == *"DRP" ]]
-    then
+        then
             # Release from DRP only if main pipeline is disabled
             install_az_tools
             launch=$(check_main_pipeline_status)
