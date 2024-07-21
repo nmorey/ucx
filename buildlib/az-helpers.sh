@@ -217,11 +217,11 @@ check_release_build() {
     launch=False
 
     # DRP release scheduled testing
-    if [ "${build_reason}" == "Schedule" ]; then
+    if [ "${build_reason}" == "Schedule" ] && [[ "$BUILD_DEFINITIONNAME" == *"DRP" ]]
+    then
         launch=True
 
-    elif [ "${build_reason}" == "IndividualCI" ] || \
-         [ "${build_reason}" == "ResourceTrigger" ]
+    elif [ "${build_reason}" == "IndividualCI" ] || [ "${build_reason}" == "ResourceTrigger" ]
     then
         if [[ "$BUILD_DEFINITIONNAME" == *"DRP" ]]
     then
