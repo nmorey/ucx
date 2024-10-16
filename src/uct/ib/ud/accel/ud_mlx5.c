@@ -1,6 +1,7 @@
 /**
 * Copyright (c) NVIDIA CORPORATION & AFFILIATES, 2001-2019. ALL RIGHTS RESERVED.
 * Copyright (C) ARM Ltd. 2017.  ALL RIGHTS RESERVED.
+* Copyright (c) Google, LLC, 2024. ALL RIGHTS RESERVED.
 *
 * See file LICENSE for terms.
 */
@@ -517,7 +518,7 @@ uct_ud_mlx5_iface_poll_rx(uct_ud_mlx5_iface_t *iface, int is_async)
 
     if (!uct_ud_iface_check_grh(&iface->super, packet,
                                 uct_ib_mlx5_cqe_is_grh_present(cqe),
-                                cqe->flags_rqpn & 0xFF)) {
+                                uct_ib_mlx5_cqe_roce_gid_len(cqe))) {
         ucs_mpool_put_inline(desc);
         goto out_polled;
     }
