@@ -8,6 +8,7 @@
 #define UCS_TIME_H
 
 #include <ucs/arch/cpu.h>
+#include <ucs/sys/math.h>
 #include <ucs/time/time_def.h>
 #include <sys/time.h>
 #include <limits.h>
